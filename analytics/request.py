@@ -14,7 +14,7 @@ def post(write_key, **kwargs):
     log = logging.getLogger('segment')
     body = kwargs
     body["sentAt"] = datetime.utcnow().replace(tzinfo=tzutc()).isoformat()
-    url = 'https://api.segment.io/v1/batch'
+    url = 'https://app.pipz.io/v1/batch'
     auth = HTTPBasicAuth(write_key, '')
     data = json.dumps(body, cls=DatetimeSerializer)
     headers = { 'content-type': 'application/json' }
